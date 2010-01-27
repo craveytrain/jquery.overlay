@@ -1,0 +1,14 @@
+form li {
+	position: relative;	
+}
+
+form label {
+	/* Set default styles in case JS is not available */
+}
+
+form label.overlayed {
+	position: absolute;
+	top: .15em;
+	left: .5em;
+	white-space: nowrap;
+}
