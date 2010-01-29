@@ -9,9 +9,9 @@ $.fn.labelOverlay = function(options) {
     // Support for the Metadata Plugin.
     var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
 
-	o.placeholder = $.fn.labelOverlay.support();
+	o.placeholderSupport = $.fn.labelOverlay.support();
 
-	if(!o.placeholder) {
+	if(!o.placeholderSupport) {
 		$this.data('id', $this.attr('id'));
 		var $label = $('label[for=' + $this.data('id') + ']');
 		$label.addClass(o.overlayedClass);
@@ -52,7 +52,7 @@ $.fn.labelOverlay.support = function() {
 
 // default options
 $.fn.labelOverlay.defaults = {
-	placeholder: false,
+	placeholderSupport: false,
 	overlayedClass: 'overlayed'
 };
 
