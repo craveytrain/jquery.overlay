@@ -1,5 +1,15 @@
-(function($) {
-// Overlay label on top of input
+/*
+ * @description	This plugin overlays the specified string of text over the form element
+ * @return {jQuery Object}
+ * @param {Object} options
+ * @type {jQuery Plugin Method}
+ * @author Mike Cravey
+ * @version 0.1	
+ * (c)Copyright 2009, 2010 Mike Cravey
+ * Licensed under the terms of the MIT license.
+ */
+
+;(function($) {
 $.fn.labelOverlay = function(options) {
   var opts = $.extend({}, $.fn.labelOverlay.defaults, options);
 
