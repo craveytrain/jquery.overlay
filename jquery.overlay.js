@@ -20,7 +20,7 @@ $.fn.overlay = function(options) {
     var o = $.meta ? $.extend(true, {}, opts, $this.data()) : opts;
 
 	o.placeholderSupport = $.fn.overlay.support();
-
+	
 	if(!o.placeholderSupport) {
 		var $overlay;
 		if (o.overlay.txt) {
@@ -32,7 +32,7 @@ $.fn.overlay = function(options) {
 		} else {
 			$overlay = $('label[for=' + $this.attr('id') + ']');
 		}
-		$overlay.attr(o.overlay.attrs).data('input', $this);
+		$overlay.addClass(o.overlay.classes).attr(o.overlay.attrs).data('input', $this);
 		if (!$this.val() == '') {
 			$overlay.hide();
 		}
@@ -78,9 +78,8 @@ $.fn.overlay.defaults = {
 	placeholderSupport: false,
 	overlay: {
 		txt: null,
-		attrs: {
-			class: 'overlayed'
-		}
+		attrs: {},
+		classes: 'overlayed'
 	}
 };
 
