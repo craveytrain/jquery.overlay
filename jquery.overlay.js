@@ -53,6 +53,8 @@ $.fn.overlay = function(options) {
 			var $this = $(e.target), $input = $this.data('input');
 			$input.focus();
 		});
+	} else {
+		$('label[for=' + $this.attr('id') + ']').addClass('offScreen');
 	}
   });
 
