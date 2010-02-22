@@ -21,7 +21,11 @@ $.fn.overlay = function(options) {
 
 	o.placeholderSupport = $.fn.overlay.support();
 	
-	if(!o.placeholderSupport) {
+	debug($(this + '[placeholder]'));
+	
+	if(o.placeholderSupport && $(this + '[placeholder]')) {
+		$('label[for=' + $this.attr('id') + ']').addClass('offScreen');
+	} else {
 		var $overlay;
 		if (o.overlay.txt) {
 			if ($(o.overlay.txt).length) {
@@ -53,8 +57,6 @@ $.fn.overlay = function(options) {
 			var $this = $(e.target), $input = $this.data('input');
 			$input.focus();
 		});
-	} else {
-		$('label[for=' + $this.attr('id') + ']').addClass('offScreen');
 	}
   });
 
