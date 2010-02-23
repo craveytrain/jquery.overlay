@@ -20,10 +20,8 @@ $.fn.overlay = function(options) {
     var o = $.meta ? $.extend(true, {}, opts, $this.data()) : opts;
 
 	o.placeholderSupport = $.fn.overlay.support();
-	
-	debug($(this + '[placeholder]'));
-	
-	if(o.placeholderSupport && $(this + '[placeholder]')) {
+		
+	if(o.placeholderSupport) {
 		$('label[for=' + $this.attr('id') + ']').addClass('offScreen');
 	} else {
 		var $overlay;
