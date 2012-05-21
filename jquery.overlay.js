@@ -4,7 +4,8 @@
  * @param {Object} options
  * @type {jQuery Plugin Method}
  * @author Mike Cravey
- * @version 0.1	
+ * @contributor Ray Pierce
+ * @version 0.2	
  * (c)Copyright 2009, 2010 Mike Cravey
  * Licensed under the terms of the MIT license.
  */
@@ -20,9 +21,9 @@ $.fn.overlay = function(options) {
     var o = $.meta ? $.extend(true, {}, opts, $this.data()) : opts;
 
 	o.placeholderSupport = $.fn.overlay.support();
-		
+
 	if(o.placeholderSupport) {
-		$('label[for=' + $this.attr('id') + ']').addClass('offScreen');
+		$('label[for=' + $this.attr('id') + ']').addClass(o.overlay.classestoremove);
 	} else {
 		var $overlay;
 		if (o.overlay.txt) {
@@ -81,7 +82,8 @@ $.fn.overlay.defaults = {
 	overlay: {
 		txt: null,
 		attrs: {},
-		classes: 'overlayed'
+		classes: 'overlayed',
+		classestoremove: 'offScreen'
 	}
 };
 
